@@ -5,16 +5,108 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CyberRakitt</title>
 
-<link rel="stylesheet" href="styles.css">
-
-<!-- Font Awesome Icons -->
+<!-- Font Awesome for Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(to bottom, #dfe9f3, #ffffff);
+        position: relative;
+    }
+
+    /* Soft City Background */
+    body::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 40%;
+        background: 
+            linear-gradient(to top, rgba(0,0,0,0.15), transparent),
+            url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade?q=80&w=1974&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.25;
+        z-index: 0;
+    }
+
+    h1 {
+        margin-top: 40px;
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: black;
+        z-index: 2;
+    }
+
+    /* Falling Balls */
+    .snow {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .snow span {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: white;
+        border-radius: 50%;
+        opacity: 0.9;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        0% {
+            transform: translateY(-10vh);
+        }
+        100% {
+            transform: translateY(110vh);
+        }
+    }
+
+    /* Bottom Social Section */
+    .socials {
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 1.2rem;
+        z-index: 2;
+    }
+
+    .socials i {
+        font-size: 1.6rem;
+    }
+
+    .socials span {
+        font-weight: bold;
+    }
+</style>
 </head>
 <body>
 
 <h1>CyberRakitt</h1>
 
 <div class="snow">
+    <!-- Multiple Falling Balls -->
     <span style="left:5%; animation-duration: 6s;"></span>
     <span style="left:15%; animation-duration: 8s;"></span>
     <span style="left:25%; animation-duration: 5s;"></span>
